@@ -40,8 +40,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
