@@ -31,6 +31,12 @@ const ReadingTime = styled.h5`
   margin-bottom: 10px;
 `
 
+const DraftInfo = styled.h5`
+  display: inline;
+  color: #606060;
+  margin-bottom: 10px;
+`
+
 const IndexPage = ({ data }) => {
   return (
     <Layout>
@@ -48,6 +54,7 @@ const IndexPage = ({ data }) => {
             >
               <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
               <div>
+                {(node.frontmatter.draft) && <DraftInfo>Draft - </DraftInfo> }
                 <ArticleDate>{node.frontmatter.date}</ArticleDate>
                 <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
               </div>
@@ -78,6 +85,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             path
+            draft
           }
           fields {
             slug

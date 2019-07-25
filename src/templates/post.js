@@ -20,6 +20,12 @@ const HeaderDate = styled.h4`
   color: #606060;
 `
 
+const DraftInfo = styled.h5`
+  margin-top: 5px;
+  text-align: center;
+  color: red;
+`
+
 // STYLE THE TAGS INSIDE THE MARKDOWN HERE
 const MarkdownContent = styled.div`
   a {
@@ -61,6 +67,9 @@ export default ({ data }) => {
           <br />
           {post.fields.readingTime.text}
         </HeaderDate>
+        
+        {post.frontmatter.draft && <DraftInfo>THIS IS A DRAFT AND WILL PROBABLY CHANGE</DraftInfo>}
+
         <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
       </Content>
     </Layout>
@@ -76,6 +85,7 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         path
         title
+        draft
       }
       fields {
         readingTime {
