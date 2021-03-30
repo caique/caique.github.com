@@ -23,7 +23,7 @@ const SocialLinks = () => {
                 <SocialLogo src={GitHubBrand} />
             </a>
 
-            <a href="https://www.linkedin.com/in/caiquerodrigues/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/caiquepeixoto/" target="_blank" rel="noopener noreferrer">
                 <SocialLogo src={LinkedInBrand} />
             </a>
 
